@@ -34,9 +34,9 @@ extern "C" {
 #define SYS_VERSION_MAJOR   1
 #define SYS_VERSION_MINOR   0
 #define SYS_VERSION_PATCH   0
-#define SYS_VERSION_BUILD   0
+#define SYS_VERSION_BUILD   1
 
-#define SYS_VERSION_STRING  "1.0.0.0"
+#define SYS_VERSION_STRING  "1.0.0.1"
 
 /*******************************************************************************
 |    Enum Definition

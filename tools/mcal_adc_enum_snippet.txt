@@ -1,0 +1,6 @@
+/* GEN_MCAL_ADC_ENUM_BEGIN */
+typedef enum {
+    eMcal_AdcCh0 = 0,
+    eMcal_AdcMaxNum,
+} eMcal_AdcCh_e;
+/* GEN_MCAL_ADC_ENUM_END */

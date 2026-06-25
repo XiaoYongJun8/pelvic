@@ -23,6 +23,9 @@
 |    Other Header File Inclusion
 |******************************************************************************/
 #include <stdint.h>
+#include <stddef.h>
+
+#include "gd32f30x_libopt.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -34,18 +37,38 @@ extern "C" {
 
 /*******************************************************************************
 |    Enum Definition
+|    Generated from source/mcal/config/mcal_gpio_ports.md; edit GEN block only
+|    via tools/gen_mcal_gpio.py (enum snippet printed, not auto-written here).
 |******************************************************************************/
+/* GEN_MCAL_GPIO_ENUM_BEGIN */
+typedef enum {
+    eMcal_GpioLedOp = 0,
+    eMcal_GpioPb2In,
+    eMcal_GpioMaxNum,
+} eMcal_GpioPin_e;
+/* GEN_MCAL_GPIO_ENUM_END */
 
 /*******************************************************************************
 |    Typedef Definition
 |******************************************************************************/
+typedef struct {
+    uint32_t ulPort;
+    uint32_t ulPin;
+    uint8_t ucMode;
+    uint8_t ucSpeed;
+    uint8_t ucDefaultLevel;
+    uint32_t ulRemap;
+} xMcal_GpioPinCfg_t;
 
 /*******************************************************************************
 |    Global Function Prototypes
 |******************************************************************************/
 void Mcal_GpioInit( void );
-void Mcal_GpioWrite( uint8_t ucPin, uint8_t ucLevel );
-uint8_t Mcal_GpioRead( uint8_t ucPin );
+void Mcal_SetGpioPin( eMcal_GpioPin_e ePin );
+void Mcal_ResetGpioPin( eMcal_GpioPin_e ePin );
+uint8_t Mcal_GetGpioPinStatus( eMcal_GpioPin_e ePin );
+void Mcal_GpioConfigPin( xMcal_GpioPinCfg_t* pxCfg );
+xMcal_GpioPinCfg_t* Mcal_GetGpioCfgTable( eMcal_GpioPin_e ePin );
 
 #ifdef __cplusplus
 }

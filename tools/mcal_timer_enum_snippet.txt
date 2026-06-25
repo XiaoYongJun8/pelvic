@@ -1,0 +1,9 @@
+/* GEN_MCAL_TIMER_ENUM_BEGIN */
+typedef enum {
+    eMcal_TimerEmg = 0,
+    eMcal_TimerStim,
+    eMcal_TimerStimOff,
+    eMcal_TimerPress,
+    eMcal_TimerMaxNum,
+} eMcal_Timer_e;
+/* GEN_MCAL_TIMER_ENUM_END */

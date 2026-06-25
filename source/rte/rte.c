@@ -49,6 +49,14 @@
 |    Function Source Code
 |******************************************************************************/
 
+/*******************************************************************************
+Name            : Rte_Init
+Parameters(in)  : None
+Parameters(out) : None
+Return value    : None
+Description     : Initialize the runtime environment layer
+Call By         : Application
+|******************************************************************************/
 void Rte_Init( void )
 {
 }

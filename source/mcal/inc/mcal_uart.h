@@ -34,7 +34,17 @@ extern "C" {
 
 /*******************************************************************************
 |    Enum Definition
+|    Generated from source/mcal/config/mcal_uart_ports.md; edit GEN block only
+|    via tools/gen_mcal_uart.py (enum snippet printed, not auto-written here).
 |******************************************************************************/
+/* GEN_MCAL_UART_ENUM_BEGIN */
+typedef enum {
+    eMcal_Uart0 = 0,
+    eMcal_Uart1,
+    eMcal_Uart2,
+    eMcal_UartMaxNum,
+} eMcal_UartCom_e;
+/* GEN_MCAL_UART_ENUM_END */
 
 /*******************************************************************************
 |    Typedef Definition
@@ -44,8 +54,10 @@ extern "C" {
 |    Global Function Prototypes
 |******************************************************************************/
 void Mcal_UartInit( void );
-void Mcal_UartSend( const uint8_t* pucData, uint16_t usLen );
-int8_t Mcal_UartRecv( uint8_t* pucData, uint16_t usLen );
+int Mcal_UartSend( eMcal_UartCom_e eCom, uint8_t* pucData, uint16_t usLen );
+void Mcal_UartIrqHandler( uint32_t ulUsart );
+int Mcal_UartReadChar( eMcal_UartCom_e eCom, uint8_t* pucData );
+uint16_t Mcal_UartGetRxCount( eMcal_UartCom_e eCom );
 
 #ifdef __cplusplus
 }

@@ -1,0 +1,9 @@
+/* GEN_MCAL_DMA_ENUM_BEGIN */
+typedef enum {
+    eMcal_DmaAdc0 = 0,
+    eMcal_DmaUart0Tx,
+    eMcal_DmaUart1Tx,
+    eMcal_DmaUart2Tx,
+    eMcal_DmaMaxNum,
+} eMcal_DmaCh_e;
+/* GEN_MCAL_DMA_ENUM_END */

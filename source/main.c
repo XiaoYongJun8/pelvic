@@ -19,9 +19,8 @@
 /*******************************************************************************
 |    Other Header File Inclusion
 |******************************************************************************/
-#include "sysm_init.h"
-#include "mytask.h"
-#include "rte.h"
+#include "sys_config.h"
+
 
 /*******************************************************************************
 |    Macro Definition
@@ -42,7 +41,7 @@
 /*******************************************************************************
 |    Static Local Functions Declaration
 |******************************************************************************/
-static void Main_SystemInit( void );
+
 
 /*******************************************************************************
 |    Extern variables and functions declaration
@@ -52,19 +51,19 @@ static void Main_SystemInit( void );
 |    Function Source Code
 |******************************************************************************/
 
+/*******************************************************************************
+Name            : main
+Parameters(in)  : None
+Parameters(out) : None
+Return value    : Not reached (bare-metal main loop)
+Description     : System entry point, initialization and main task loop
+Call By         : C runtime startup
+|******************************************************************************/
 int main( void )
 {
-    Main_SystemInit();
-    MyTask_StartScheduler();
+
 
     while ( 1 ) {
     }
-
-    return 0;
 }
 
-static void Main_SystemInit( void )
-{
-    Sysm_Init();
-    Rte_Init();
-}

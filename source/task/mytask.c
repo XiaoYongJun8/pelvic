@@ -49,6 +49,14 @@
 |    Function Source Code
 |******************************************************************************/
 
+/*******************************************************************************
+Name            : MyTask_StartScheduler
+Parameters(in)  : None
+Parameters(out) : None
+Return value    : None
+Description     : Start the system task scheduler
+Call By         : Application
+|******************************************************************************/
 void MyTask_StartScheduler( void )
 {
 }

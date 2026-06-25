@@ -1,0 +1,8 @@
+/* GEN_MCAL_UART_ENUM_BEGIN */
+typedef enum {
+    eMcal_Uart0 = 0,
+    eMcal_Uart1,
+    eMcal_Uart2,
+    eMcal_UartMaxNum,
+} eMcal_UartCom_e;
+/* GEN_MCAL_UART_ENUM_END */

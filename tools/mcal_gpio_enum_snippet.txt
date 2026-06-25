@@ -1,0 +1,7 @@
+/* GEN_MCAL_GPIO_ENUM_BEGIN */
+typedef enum {
+    eMcal_GpioLedOp = 0,
+    eMcal_GpioPb2In,
+    eMcal_GpioMaxNum,
+} eMcal_GpioPin_e;
+/* GEN_MCAL_GPIO_ENUM_END */
