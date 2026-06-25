@@ -1,6 +1,6 @@
 /*******************************************************************************
-|  File Name:  sys_config.h
-|  Description:  System global configuration header
+|  File Name:  mcal_dac.h
+|  Description:  Head file of MCAL DAC driver
 |-------------------------------------------------------------------------------
 | (c) This software is the proprietary of MD.
 |          All rights are reserved by MD.
@@ -16,8 +16,8 @@
 | 2026-06-25    01.00.00     XYJ       Creation
 |******************************************************************************/
 
-#ifndef _SYS_CONFIG_H_
-#define _SYS_CONFIG_H_
+#ifndef _MCAL_DAC_H_
+#define _MCAL_DAC_H_
 
 /*******************************************************************************
 |    Other Header File Inclusion
@@ -31,29 +31,38 @@ extern "C" {
 /*******************************************************************************
 |    Macro Definition
 |******************************************************************************/
-#define SYS_VERSION_MAJOR   1
-#define SYS_VERSION_MINOR   0
-#define SYS_VERSION_PATCH   0
-#define SYS_VERSION_BUILD   2
-
-#define SYS_VERSION_STRING  "1.0.0.2"
-
-#define SYS_FREERTOS_HEAP_SIZE  ( 18U * 1024U )
 
 /*******************************************************************************
 |    Enum Definition
+|    Generated from source/mcal/config/mcal_dac_channels.md; edit GEN block only
+|    via tools/gen_mcal_dac.py (enum snippet printed, not auto-written here).
 |******************************************************************************/
+/* GEN_MCAL_DAC_ENUM_BEGIN */
+typedef enum {
+    eMcal_DacStimCur = 0,
+    eMcal_DacStimBoost,
+    eMcal_DacMaxNum,
+} eMcal_DacCh_e;
+/* GEN_MCAL_DAC_ENUM_END */
 
 /*******************************************************************************
 |    Typedef Definition
 |******************************************************************************/
+typedef struct {
+    uint32_t ulPort;
+    uint32_t ulDataAlign;
+} xMcal_DacInstCfg_t;
 
 /*******************************************************************************
 |    Global Function Prototypes
 |******************************************************************************/
+void Mcal_DacInit( void );
+void Mcal_DacDeInit( void );
+void Mcal_DacSetOutValue( eMcal_DacCh_e eCh, uint16_t usData );
+uint16_t Mcal_DacGetOutValue( eMcal_DacCh_e eCh );
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* _SYS_CONFIG_H_ */
+#endif /* _MCAL_DAC_H_ */

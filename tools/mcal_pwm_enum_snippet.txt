@@ -1,0 +1,6 @@
+/* GEN_MCAL_PWM_ENUM_BEGIN */
+typedef enum {
+    eMcal_PwmPump = 0,
+    eMcal_PwmMaxNum,
+} eMcal_Pwm_e;
+/* GEN_MCAL_PWM_ENUM_END */

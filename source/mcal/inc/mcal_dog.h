@@ -1,6 +1,6 @@
 /*******************************************************************************
-|  File Name:  sys_config.h
-|  Description:  System global configuration header
+|  File Name:  mcal_dog.h
+|  Description:  Head file of MCAL watchdog driver
 |-------------------------------------------------------------------------------
 | (c) This software is the proprietary of MD.
 |          All rights are reserved by MD.
@@ -16,8 +16,8 @@
 | 2026-06-25    01.00.00     XYJ       Creation
 |******************************************************************************/
 
-#ifndef _SYS_CONFIG_H_
-#define _SYS_CONFIG_H_
+#ifndef _MCAL_DOG_H_
+#define _MCAL_DOG_H_
 
 /*******************************************************************************
 |    Other Header File Inclusion
@@ -31,14 +31,6 @@ extern "C" {
 /*******************************************************************************
 |    Macro Definition
 |******************************************************************************/
-#define SYS_VERSION_MAJOR   1
-#define SYS_VERSION_MINOR   0
-#define SYS_VERSION_PATCH   0
-#define SYS_VERSION_BUILD   2
-
-#define SYS_VERSION_STRING  "1.0.0.2"
-
-#define SYS_FREERTOS_HEAP_SIZE  ( 18U * 1024U )
 
 /*******************************************************************************
 |    Enum Definition
@@ -47,13 +39,20 @@ extern "C" {
 /*******************************************************************************
 |    Typedef Definition
 |******************************************************************************/
+typedef struct {
+    uint16_t usReload;
+    uint8_t ucPrescaler;
+    uint8_t ucFeedOnInit;
+} xMcal_DogCfg_t;
 
 /*******************************************************************************
 |    Global Function Prototypes
 |******************************************************************************/
+void Mcal_DogInit( void );
+void Mcal_FeedDog( void );
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* _SYS_CONFIG_H_ */
+#endif /* _MCAL_DOG_H_ */

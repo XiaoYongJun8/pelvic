@@ -1,0 +1,7 @@
+/* GEN_MCAL_DAC_ENUM_BEGIN */
+typedef enum {
+    eMcal_DacStimCur = 0,
+    eMcal_DacStimBoost,
+    eMcal_DacMaxNum,
+} eMcal_DacCh_e;
+/* GEN_MCAL_DAC_ENUM_END */
